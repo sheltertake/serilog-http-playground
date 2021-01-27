@@ -17,9 +17,8 @@ namespace FooApi
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                 .MinimumLevel.Override("System", LogEventLevel.Warning)
                 .WriteTo.Http(
-                      requestUri: "http://localhost:5000",
-                      batchFormatter: new Serilog.Sinks.Http.BatchFormatters.ArrayBatchFormatter(),
-                      queueLimit:10)
+                      requestUri: "http://localhost:31311",
+                      batchFormatter: new Serilog.Sinks.Http.BatchFormatters.ArrayBatchFormatter())
                 .WriteTo.Console()
                 .CreateLogger();
             try
